@@ -43,8 +43,22 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	// Draw red line to visualize
 	DrawDebugLine(GetWorld(), PlayerViewpointLocation, LineTraceEnd, FColor(255, 0, 0), false, 0.f, 0.f, 20.f);
 
-	// Raycast to reach distance
-
+	// Set query parameters
+	FCollisionQueryParams TraceParameters(FName(TEXT("")), false, GetOwner());
+	
+	/// Raycast to reach distance
+	FHitResult Hit;
+	bool IsHittingSomething = GetWorld()->LineTraceSingleByObjectType(
+		OUT Hit, 
+		PlayerViewpointLocation, 
+		LineTraceEnd, 
+		FCollisionObjectQueryParams(ECollisionChannel::ECC_PhysicsBody), 
+		TraceParameters
+	);
+	
 	// See what we hit
+	if (IsHittingSomething) {
+		UE_LOG(LogTemp, Warning, TEXT("Can grab %s"), *(Hit.GetActor()->GetName()));
+	}
 }
 

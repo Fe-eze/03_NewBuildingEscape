@@ -4,9 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "GameFramework/Actor.h"
+#include "Runtime/Engine/Classes/GameFramework/Actor.h"
 #include "GameFramework/PlayerController.h"
 #include "Runtime/Engine/Public/DrawDebugHelpers.h"
+#include "Runtime/Engine/Classes/Engine/World.h"
+//#include "Runtime/Engine/Classes/Engine/EngineTypes.h"
 #include "Grabber.generated.h"
 
 
