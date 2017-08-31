@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "GameFramework/Actor.h"
+#include "GameFramework/PlayerController.h"
+#include "Runtime/Engine/Public/DrawDebugHelpers.h"
 #include "Grabber.generated.h"
 
 
