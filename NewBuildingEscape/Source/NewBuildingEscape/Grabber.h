@@ -36,7 +36,7 @@ private:
 	// How far ahead can we reach in cm
 	float Reach = 100.f;
 		
-	UPhysicsHandleComponent* PhysicsHandler = nullptr;
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 	UInputComponent* InputComponent = nullptr;
 
 	// Find (assumed) attached Physics handle Component
