@@ -28,7 +28,7 @@ void UGrabber::FindPhysicsHandleComponent()
 	}
 }
 
-/// Look for input componenet(which appears at runtime only) and log error if not found
+/// Look for input component(which appears at runtime only) and log error if not found
 void UGrabber::SetupInputComponent()
 {
 	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();

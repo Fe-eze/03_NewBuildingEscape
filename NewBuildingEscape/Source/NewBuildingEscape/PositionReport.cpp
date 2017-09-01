@@ -28,7 +28,5 @@ void UPositionReport::BeginPlay()
 void UPositionReport::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
 }
 
