@@ -48,12 +48,14 @@ void UGrabber::Grab() {
 
 	/// If we hit one, attach the physics handle
 	if (HitResult.GetActor() != nullptr) {
+		if (!PhysicsHandle) { return; }
 		PhysicsHandle->GrabComponent(ComponentToGrab, NAME_None, ComponentToGrab->GetOwner()->GetActorLocation(), true); // NO bones needed and we allow rotation
 	}
 }
 
 void UGrabber::Release()
 {
+	if (!PhysicsHandle) { return; }
 	PhysicsHandle->ReleaseComponent(); // Release Physics Handle
 }
 
@@ -62,6 +64,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+	if (!PhysicsHandle) { return; }
 	// If we're grabbing something (ie if the physics handle is attached)
 	if (PhysicsHandle->GrabbedComponent) {
 		// move the object that we're holding
