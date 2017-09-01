@@ -11,6 +11,7 @@
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Runtime/Engine/Classes/Components/InputComponent.h"
 #include "Runtime/Engine/Classes/GameFramework/Character.h"
+#include "Runtime/Engine/Classes/Components/PrimitiveComponent.h"
 //#include "Runtime/Engine/Classes/Engine/EngineTypes.h"
 #include "Grabber.generated.h"
 
@@ -53,4 +54,7 @@ private:
 
 	// Return the first physics body in reach (quick raycast to relieve hot loop)
 	const FHitResult GetFirstPhysicsBodyInReach();
+
+	FVector GetReachLineStart();
+	FVector GetReachLineEnd();
 };
