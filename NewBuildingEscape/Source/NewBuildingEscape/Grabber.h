@@ -9,6 +9,7 @@
 #include "Runtime/Engine/Public/DrawDebugHelpers.h"
 #include "Runtime/Engine/Classes/Engine/World.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Runtime/Engine/Classes/Components/InputComponent.h"
 #include "Runtime/Engine/Classes/GameFramework/Character.h"
 //#include "Runtime/Engine/Classes/Engine/EngineTypes.h"
 #include "Grabber.generated.h"
@@ -36,4 +37,10 @@ private:
 	float Reach = 100.f;
 		
 	UPhysicsHandleComponent* PhysicsHandler = nullptr;
+	UInputComponent* InputComponent = nullptr;
+
+	// Grab what's in reach of raycast bolt
+	void Grab();
+	// Release an object that's been grabbed
+	void Release();
 };
